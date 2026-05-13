@@ -14,13 +14,13 @@ import {
 import { Button } from "@/components/ui/button";
 
 const FRAME_CONFIG = {
-  id: "mothers-day-dp-2026",
-  src: "/doctor_dp.png",
-  outputSize: 900,
-  photoX: 64,
-  photoY: 64,
-  photoWidth: 772,
-  photoHeight: 594,
+  id: "world-hypertension-day-dp-2026",
+  src: "/frames/whd-day-dp-frame-2026.png",
+  outputSize: 2667,
+  photoX: 385,
+  photoY: 504,
+  photoWidth: 1922,
+  photoHeight: 1921,
 } as const;
 
 const DEFAULT_CROP: Point = { x: 0, y: 0 };
@@ -114,7 +114,7 @@ async function renderFramedJpg({
 }
 
 function buildFileName() {
-  return "mothers-day-2026-dp.jpg";
+  return "world-hypertension-day-2026-dp.jpg";
 }
 
 export function WadDpMaker() {
@@ -159,7 +159,7 @@ export function WadDpMaker() {
       })
       .catch(() => {
         if (isActive) {
-          setErrorMessage("Unable to load the Mother's Day frame.");
+          setErrorMessage("Unable to load the World Hypertension Day frame.");
         }
       });
 
@@ -268,7 +268,7 @@ export function WadDpMaker() {
   async function handleGenerate() {
     if (!photoImage || !frameImage || !croppedAreaPixels) {
       setErrorMessage(
-        "Upload and position a photo before generating the Mother's Day DP."
+        "Upload and position a photo before generating the WHD campaign DP."
       );
       return;
     }
@@ -327,10 +327,10 @@ export function WadDpMaker() {
           <div className="space-y-5">
             <div className="space-y-3">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--brand-green)]">
-                Mother's Day
+                World Hypertension Day
               </p>
               <h1 className="font-heading text-4xl leading-none font-semibold text-[var(--ink)] sm:text-5xl">
-                Mother's Day 2026 DP Maker
+                WHD 2026 DP Maker
               </h1>
             </div>
           </div>
@@ -385,8 +385,8 @@ export function WadDpMaker() {
                         Upload a photo
                       </p>
                       <p className="mt-1 max-w-sm text-sm leading-5 text-[var(--muted-ink)]">
-                        Use a clear portrait. You can adjust crop and zoom before
-                        generating the final DP.
+                        Use a clear portrait. Adjust crop and zoom to fit the
+                        circular frame before generating the final DP.
                       </p>
                     </div>
                   </div>
@@ -473,11 +473,11 @@ export function WadDpMaker() {
                   />
                 ) : (
                   <Image
-                    alt="Mother's Day DP frame preview"
+                    alt="World Hypertension Day DP frame preview"
                     className="h-auto w-full"
-                    height={900}
+                    height={2667}
                     src={FRAME_CONFIG.src}
-                    width={900}
+                    width={2667}
                   />
                 )}
               </div>
